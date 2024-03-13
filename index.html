@@ -13,9 +13,9 @@
     content="I aspire to make user experience a top priority in digital products with meaningful and beautiful design." />
   <meta property="og:image" content="/assets/wave-logo.png" />
   <meta property="og:url" content="/this-page.html" />
-  <meta property="og:site_name" content="Your Site Name" />
+  <meta property="og:site_name" content="Heini Kenkimäki portfolio" />
   <meta name="twitter:card" content="/assets/wave-logo.png" />
-  <meta name="twitter:image:alt" content="image description" />
+  <meta name="twitter:image:alt" content="Heini wave logo" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@300..700&display=swap"
@@ -32,7 +32,7 @@
       <section>
         <article>
           <h1>Heini is a versatile designer prioritizing user experience</h3>
-            <p>
+            <p class="article">
               I aspire to make user experience a top priority in digital products
               with meaningful and beautiful design. My heart beats for designs that
               speak the language of the users through and through. Due to my
@@ -42,16 +42,32 @@
             <img class="hero__image" alt="wave" src="/assets/png-wave.png" />
             <div class="hero__buttons">
               <a target="_blank" href="https://fi.linkedin.com/in/heini-kenkim%C3%A4ki-a2152b160">
-                <button>LinkedIn</button>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M384 224v184a40 40 0 0 1-40 40H104a40 40 0 0 1-40-40V168a40 40 0 0 1 40-40h167.48M336 64h112v112M224 288L440 72" />
+                  </svg>
+                  LinkedIn</button>
               </a>
-              <a href="mailto:example@gmail.com">
-                <button type="button">Email</button>
+              <a href="mailto:heini.kenkimaki@outlook.com">
+                <button type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="32"
+                      d="M384 224v184a40 40 0 0 1-40 40H104a40 40 0 0 1-40-40V168a40 40 0 0 1 40-40h167.48M336 64h112v112M224 288L440 72" />
+                  </svg>
+                  Email</button>
               </a>
             </div>
         </article>
       </section>
     </main>
     <section>
+      <div class="wave__header">
+        <h2>My experience</h2>
+        <img width="120" src="/assets/miniwave.svg" alt="small wave" />
+      </div>
       <div class="experience__container">
         <div class="experience__item">
           <div>
@@ -140,27 +156,32 @@
       </div>
     </section>
   </div>
-  <section class="product__image__container">
-    <div class="image__stack">
-      <div>
-        <img src="/assets/ruuhkamittari.svg" alt="ruuhkamittari" />
-        <p class="image__name">Ruuhkamittari, HUS, 2022</p>
+  <div class="section__container">
+    <section class="product__image__container">
+      <div class="image__stack">
+        <div>
+          <img src="/assets/HUS_design.svg" width="280" alt="Ruuhkamittari UI design" />
+          <p class="image__name">Ruuhkamittari, HUS, 2022</p>
+        </div>
+        <div>
+          <img src="/assets/PTS_design.svg" width="280" alt="Älykäs PTS component design" />
+          <p class="image__name">Älykäs PTS, 2023</p>
+        </div>
       </div>
       <div>
-        <img src="/assets/tarjopyyntökortit.svg" alt="tarjouspyyntö kortteja" />
-        <p class="image__name">Älykäs PTS, 2023</p>
+        <div>
+          <img height="" src="/assets/ai-assistant.svg" alt="GenAI Assistant mobile views" />
+          <p class="image__name">Accenture, 2023</p>
+        </div>
       </div>
-    </div>
-    <div>
-      <div>
-        <img src="/assets/ai-assistant.svg" alt="ai assistant chat" />
-        <p class="image__name">Accenture, 2023</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <div class="wrapper">
     <section class="about__me__container">
-      <h2>Said about me</h2>
+      <div class="wave__header">
+        <h2>Said about me</h2>
+        <img width="120" src="/assets/miniwave.svg" alt="small wave" />
+      </div>
       <div class="about__me__item">
         <p>“Heini’s main responsibilities in the project were UI design and development, which she managed excellently.
           She quickly produced several proposals, which were reviewed together with the client. After the review she
@@ -182,6 +203,8 @@
       </div>
     </section>
   </div>
+  <footer class="footer">
+    © Heini Kenkimäki
+  </footer>
 </body>
-
 </html>

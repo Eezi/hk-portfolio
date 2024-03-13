@@ -6,12 +6,14 @@
   --accent: #443dff;
   --chip-color: #393F3E;
   --section-gap: 10rem;
-  --caption-fs: 0.9rem;
+  --caption-fs: 1rem;
   --background-dark: #1C2220;
   --shadow: #a8d9c5;
 
   --ff-base: "Quicksand", sans-serif;
+  --ff-header: "Abril Fatface", serif;
 
+  --fs-300: clamp(0.9rem, 0.8176rem + 0.3765vw, 1.1rem);
   --fs-400: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   --fs-500: clamp(1.35rem, 1.2048rem + 0.7261vw, 1.7675rem);
   --fs-600: clamp(1.62rem, 1.3141rem + 1.5293vw, 2.4994rem);
@@ -24,7 +26,7 @@
   :root {
     --text: #a4d2bf;
     --background: #2f3332;
-    --primary: #0429e7;
+    --primary: #a4d2bf;
     --secondary: #43028d;
     --accent: #8e03b5;
   }
@@ -39,7 +41,7 @@
 }
 
 html {
-  color-scheme: light dark;
+  color-scheme: only dark;
   hanging-punctiation: first;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -47,6 +49,7 @@ html {
 }
 
 body {
+  background-color: var(--background);
   font-family: var(--ff-base);
   color: var(--text);
   font-size: var(--fs-400);
@@ -72,29 +75,35 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.1;
+  line-height: 1.26;
   text-wrap: balance;
   overflow-wrap: break-word;
-  margin-bottom: 1rem;
-  font-family: "Abril Fatface", serif;
+  font-family: var(--ff-header);
 }
 
 p {
   max-width: 65ch;
   margin-bottom: 1rem;
   text-wrap: pretty;
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
   overflow-wrap: break-word;
+}
+
+p.article {
+  font-size: var(--fs-400);
+  max-width: 50ch;
 }
 
 h1 {
   font-size: var(--fs-700);
-  font-family: 'Elephant';
+  margin-bottom: 2rem;
+  background: url(/assets/tausta.png) center;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 h2 {
   font-size: var(--fs-600);
-  font-family: 'Elephant';
 }
 
 h3 {
@@ -102,28 +111,41 @@ h3 {
 }
 
 h4 {
-  font-family: 'Elephant';
+  margin-bottom: .8rem;
+  font-weight: 100;
 }
 
 h6 {
   font-weight: lighter;
+  font-family: var(--ff-base);
+  font-size: var(--caption-fs);
 }
 
 a {
   color: var(--primary);
+  text-decoration: none;
 }
 
 button {
   border: 3px solid #A8D9C5;
-  padding: .5rem;
+  color: var(--primary);
+  padding: .8rem;
   background-color: var(--background-dark);
-  border-radius: 12px;
+  border-radius: 22px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 button:hover {
   border: 3px solid #86BAAE;
   box-shadow: 0px 0px 10px 3px #A8D9C5;
   cursor: pointer;
+}
+
+button:active {
+  background-color: var(--chip-color);
 }
 
 a:hover,
@@ -144,6 +166,7 @@ img {
 .wrapper {
   width: min(100% - 3rem, 65ch);
   margin-inline: auto;
+  margin-top: 12rem;
 }
 
 h1,
@@ -152,7 +175,8 @@ h2 {
 }
 
 .hero__image {
-  margin: 2.5rem 0;
+  margin-bottom: 4rem;
+  margin-top: -0.7rem;
 }
 
 .hero__buttons {
@@ -161,9 +185,8 @@ h2 {
 }
 
 .experience__container {
-  margin-top: var(--section-gap);
   display: grid;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .experience__item {
@@ -196,27 +219,30 @@ h2 {
   font-size: 1rem;
 }
 
-.product__image__container {
+.section__container {
   margin-top: var(--section-gap);
   background-color: var(--background-dark);
   padding-inline: 2rem;
   padding-block: 4rem;
-  margin-inline: center;
   display: grid;
-  gap: 2rem;
+  place-items: center;
+}
+
+.product__image__container {
+  width: min(100% - 3rem, 65ch);
+  display: grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .image__stack {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
 }
 
 .image__name {
-  margin-top: .5rem;
+  margin-top: .6rem;
   font-size: var(--caption-fs);
 }
 
@@ -226,7 +252,8 @@ h2 {
 }
 
 .about__me__item {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
   padding: 1.4rem;
   border: 1px solid var(--text);
   border-radius: 20px;
@@ -236,5 +263,20 @@ h2 {
 .said__name {
   margin: .5rem;
   text-align: right;
+  font-size: var(--caption-fs);
+}
+
+.wave__header {
+  margin-top: var(--section-gap);
+  display: flex;
+  gap: 1.1rem;
+  align-items: baseline;
+  margin-bottom: 3rem;
+}
+
+.footer {
+  margin-top: 6rem;
+  margin-bottom: 8px;
+  text-align: center;
   font-size: var(--caption-fs);
 }
