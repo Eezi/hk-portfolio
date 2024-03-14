@@ -166,7 +166,7 @@ img {
 .wrapper {
   width: min(100% - 3rem, 65ch);
   margin-inline: auto;
-  margin-top: 12rem;
+  margin-top: var(--section-gap);
 }
 
 h1,
